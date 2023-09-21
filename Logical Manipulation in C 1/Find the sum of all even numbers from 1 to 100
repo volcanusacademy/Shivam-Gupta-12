@@ -1,0 +1,17 @@
+//Find the sum of all even numbers from 1 to 100
+
+#include <stdio.h>
+int main(){
+    int i,n,sum;
+    
+    
+    for(i=2; i<=100; i+=2)
+      {
+        sum+=i;
+    }
+    printf("sum of all even number from 1to100=%d", sum);
+    
+
+    
+    return 0;
+}
