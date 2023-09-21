@@ -1,0 +1,20 @@
+//Write a program in C language to add, substract, multiply, divide the given number using suitable data type and variables
+#include <stdio.h>
+
+int main()
+{
+    
+    int a=9;
+    int b=3;
+    
+    
+    
+    
+     printf("sum the two number=%d+%d=%d",a,b,a+b);
+     printf("\nsubstraction  the two number=%d-%d=%d",a,b,a-b);
+     printf("\nmultiplie the two number=%d*%d=%d",a,b,a*b);
+     printf("\ndivision the two number=%d/%d=%d",a,b,a/b);
+     
+     
+     return 0; 
+}
