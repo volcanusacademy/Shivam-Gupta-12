@@ -1,0 +1,12 @@
+//C Program Structure
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Hello devloper";
+
+    return 0;
+}
