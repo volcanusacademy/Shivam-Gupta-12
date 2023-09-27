@@ -1,0 +1,15 @@
+//Write a c program to display table of given number using for loop Example -> 9 x 1 = 9 9 x 2 = 18 9 x 3 =27 ... etc
+
+#include <stdio.h>
+
+int main() {
+    int j;
+    printf("enter the number:");
+    scanf("%d",&j);
+    
+    for(int i=1;i<=10;i++)
+    {
+    printf("%d*%d=%d \n",j,i,j*i);
+}
+    return 0;
+}
