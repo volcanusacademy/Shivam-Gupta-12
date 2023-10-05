@@ -1,0 +1,46 @@
+//Write a program in c to for calculator, create separate function for each type of calculation
+
+#include <stdio.h>
+
+int main()
+{
+    char C;
+    float num1, num2, result= 'f';
+
+    printf("Enter number 1 [+ - * /] number 2\n");
+
+    
+    scanf("%f %c %f", &num1, &C, &num2);
+
+    
+    switch(C)
+    {
+        case '+': 
+            result = num1 + num2;
+             printf("%f" ,result);
+            break;
+
+        case '-': 
+            result = num1 - num2;
+            printf("%f" ,result);
+            break;
+
+        case '*': 
+            result = num1 * num2;
+            printf("%f" ,result);
+            break;
+
+        case '/': 
+            result = num1 / num2;
+            printf("%f" ,result);
+            break;
+
+        default: 
+            printf("Invalid operator");
+            break;
+    }
+
+    
+
+    return 0;
+}
