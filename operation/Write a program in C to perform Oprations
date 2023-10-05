@@ -1,0 +1,31 @@
+
+//Write a program in C to perform Oprations
+
+
+#include <stdio.h>
+
+int main()
+{
+    int a,b,sum ,Subtraction,multiplie,division;
+    printf("enter the first number:");
+    scanf("%d",&a);
+    
+    printf("enter the second number:");
+    scanf("%d",&b);
+    
+    {
+        sum=a+b;
+        Subtraction=a-b;     
+        multiplie=a*b;
+        division=a/b;
+    
+    }
+    printf("sum the two number=%d",sum);
+    printf("\nSubtraction of two number=%d",Subtraction);
+    printf("\nmultiplie of two number=%d",multiplie);
+    printf("\ndivision of two number=%d",division);
+    
+
+
+    return 0;
+}
