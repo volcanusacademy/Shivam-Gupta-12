@@ -1,0 +1,45 @@
+//Write a c program to find the grade on giving % percentage as input use if else
+
+#include <stdio.h>
+
+int main()
+{  
+    int a;
+    printf("Enter the percentage:");
+    scanf("%d",&a);
+    
+    if(a>90)
+   {
+     printf("Grade A+");
+       
+   }
+    
+    else if(a>=80)
+    {
+        printf("Grade A");
+        
+    }
+    
+    else if(a>=70)
+    {
+       printf("Grade B");
+    }
+    
+    else if(a>=50)
+    {
+        printf("Grade C");
+    }
+    
+      else if(a>=33)
+    {
+        printf("Grade D");
+    }
+    
+     else
+     {
+         printf("you are fail");
+     }
+
+
+    return 0;
+}
