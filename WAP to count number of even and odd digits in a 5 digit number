@@ -1,0 +1,29 @@
+//WAP to count number of even and odd digits in a 5 digit number
+
+
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a 5-digit number: ");
+    scanf("%d", &number);
+
+    int evenCount = 0;
+    int oddCount = 0;
+
+    int digit;
+    for (int i = 0; i < 5; i++) {
+        digit = number % 10;
+        if (digit % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+        number /= 10;
+    }
+
+    printf("Number of even digits: %d\n", evenCount);
+    printf("Number of odd digits: %d\n", oddCount);
+
+    return 0;
+}

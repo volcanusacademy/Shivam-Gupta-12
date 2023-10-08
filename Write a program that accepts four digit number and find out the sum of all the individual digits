@@ -1,0 +1,30 @@
+/*Write a program that accepts four digit number and find out the sum of all the individual digits*/
+
+
+#include <stdio.h>
+
+int main() {
+    int number, sum = 0;
+
+    
+    printf("Enter a four-digit number: ");
+    scanf("%d", &number);
+
+
+    if (number < 1000 || number > 9999) {
+        printf("Invalid input! Please enter a four-digit number.\n");
+    } else {
+        
+        while (number != 0) {
+            int digit = number % 10;
+            sum += digit;
+            number /= 10;
+        }
+
+
+        printf("Sum of individual digits: %d\n", sum);
+    }
+
+    return 0;
+}
+

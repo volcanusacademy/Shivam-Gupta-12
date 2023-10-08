@@ -1,0 +1,25 @@
+/* Program to check whether entered character is a
+digit or not and if yes, then replace it by **/
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char ch;
+    
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    
+    
+    if (isdigit(ch)) {
+        printf("Entered character is a digit. \nReplacing with : *");
+    } else {
+        printf("Entered character is not a digit.\n");
+    }
+    
+    return 0;
+}
+
+
+
+

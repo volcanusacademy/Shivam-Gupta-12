@@ -1,0 +1,25 @@
+//WAP to round off 3 digit number
+
+
+#include <stdio.h>
+#include <math.h>
+  
+int
+main ()
+{
+  
+double number;
+  
+printf ("Enter a three-digit number: ");
+  
+scanf ("%lf", &number);
+  
+ 
+double roundedNumber = round (number);
+  
+printf ("Rounded number: %.f\n", roundedNumber);
+  
+ 
+return 0;
+
+}

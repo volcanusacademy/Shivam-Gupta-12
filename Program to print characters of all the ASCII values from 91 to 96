@@ -1,0 +1,14 @@
+//Program to print characters of all the ASCII values from 91 to 96
+
+#include <stdio.h>
+int main() {
+   
+   int i = 0;
+   printf("Character ASCII Value\n");
+  
+   for (i = 91; i <=96; i++) {
+      printf("%d\t%c\n", i, i);
+  
+   }
+   return 0;
+}

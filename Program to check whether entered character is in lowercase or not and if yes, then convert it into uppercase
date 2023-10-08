@@ -1,0 +1,20 @@
+/*Program to check whether entered character is in
+lowercase or not and if yes, then convert it into uppercase*/
+
+
+#include <stdio.h>  
+ 
+int main ()  
+{  
+    char  lwr;   
+    int ascii;  
+      
+    
+     
+    printf (" \n Enter the Lower Case Character: ");  
+    scanf (" %c", &lwr);  
+    ascii = lwr - 32;  
+    printf (" %c character in the Upper case is: %c", lwr, ascii);  
+      
+    return 0;  
+}  

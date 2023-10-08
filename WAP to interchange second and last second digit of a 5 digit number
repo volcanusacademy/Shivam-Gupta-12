@@ -1,0 +1,31 @@
+/* WAP to interchange second and last second digit of a 5 digit number
+           Ex: 23123 O/p: 22133*/
+
+
+#include <stdio.h>
+
+int main() {
+    int num, digit1, digit2, digit3, digit4, digit5, swapNum;
+
+    printf("Enter a 5-digit number: ");
+    scanf("%d", &num);
+
+    digit1 = num / 10000;
+    digit2 = (num / 1000) % 10;
+    digit3 = (num / 100) % 10;
+    digit4 = (num / 10) % 10;
+    digit5 = num % 10;
+
+    
+    int temp = digit2;
+    digit2 = digit4;
+    digit4 = temp;
+
+    
+    swapNum = digit1 * 10000 + digit2 * 1000 + digit3 * 100 + digit4 * 10 + digit5;
+    
+    printf("Modified number: %d\n", swapNum);
+
+    return 0;
+}
+
