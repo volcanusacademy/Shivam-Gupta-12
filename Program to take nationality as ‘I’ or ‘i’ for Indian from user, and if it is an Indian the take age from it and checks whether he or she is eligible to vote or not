@@ -1,0 +1,31 @@
+/* Program to take nationality as ‘I’ or ‘i’ for Indian from user,
+and if it is an Indian the take age from it and checks whether he or she is eligible to vote or not.*/
+
+#include <stdio.h>
+
+int main() {
+    char nationality;
+    int age;
+
+    printf("Enter your nationality (I or i for Indian): ");
+    scanf(" %c", &nationality);
+
+    if (nationality == 'I' || nationality == 'i') {
+        printf("Enter your age: ");
+        scanf("%d", &age);
+
+        if (age >= 18) {
+            printf("You are eligible to vote.\n");
+        } else {
+            printf("You are not eligible to vote.\n");
+        }
+    } else {
+        printf("You are not an Indian citizen.\n");
+    }
+
+    return 0;
+}
+
+
+
+

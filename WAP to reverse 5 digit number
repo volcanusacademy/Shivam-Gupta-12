@@ -1,0 +1,26 @@
+//WAP to reverse 5 digit number
+
+#include <stdio.h>
+
+int main() {
+    int num, reversedNum = 0, remainder;
+
+    printf("Enter a 5-digit number: ");
+    scanf("%d", &num);
+
+
+    if (num >= 10000 && num <= 99999) {
+
+        while (num != 0) {
+            remainder = num % 10;
+            reversedNum = reversedNum * 10 + remainder;
+            num /= 10;
+        }
+
+        printf("Reversed number: %d\n", reversedNum);
+    } else {
+        printf("Invalid input! Please enter a 5-digit number.\n");
+    }
+
+    return 0;
+}

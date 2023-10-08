@@ -1,0 +1,24 @@
+//Write a program that accepts 5 digit number and replace first and last digit.Ex : 45872 o/p: 25874
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int n,firstDigit, lastDigit,digits, replaceNum;
+    printf("Enter number = ");
+    scanf("%d", &n);
+    
+    lastDigit = n % 10;
+    
+    digits    = (int)log10(n);
+    
+    firstDigit = (int) (n / pow(10, digits));
+    replaceNum  = lastDigit;
+    replaceNum*= (int) round(pow(10, digits));
+    replaceNum += n % ((int)round(pow(10, digits)));
+    replaceNum -= lastDigit;
+    replaceNum += firstDigit;
+    printf("Number after replace first and last digit: %d", replaceNum);
+    return 0;
+}

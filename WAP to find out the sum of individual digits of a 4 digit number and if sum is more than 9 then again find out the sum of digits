@@ -1,0 +1,28 @@
+/* WAP to find out the sum of individual digits of a 4 digit number and 
+if sum is more than 9 then again find out the sum of digits.*/ 
+
+#include <stdio.h>
+
+int findDigitSum(int number) {
+    int sum = 0;
+    while (number > 0) {
+        sum += number % 10;
+        number /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int number;
+    printf("Enter a 4-digit number: ");
+    scanf("%d", &number);
+
+    int digitSum = findDigitSum(number);
+    while (digitSum > 9) {
+        digitSum = findDigitSum(digitSum);
+    }
+
+    printf("Sum of individual digits: %d\n", digitSum);
+
+    return 0;
+}
