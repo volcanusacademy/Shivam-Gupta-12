@@ -1,0 +1,84 @@
+/*Animal Inheritance: Create a base class Animal with properties like name and 
+age. Then, create subclasses (e.g., Dog, Cat) that inherit from Animal and add
+specific properties and methods to each subclass. Demonstrate how you can create
+instances of these subclasses and access both inherited and subclass-specific 
+attributes and methods*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Animal {
+protected:
+    string name;
+    int age;
+
+public:
+    Animal(const string& name, int age)
+         :name(name), age(age) {}
+
+    void print() {
+        cout << "\nName: " << name << ", \nAge:" << age;
+    }
+};
+
+
+class Dog : public Animal {
+private:
+    string breed;
+
+public:
+    Dog(const string& name, int age, const string& breed)
+        : Animal(name, age), breed(breed) {}
+
+    void bark() {
+        cout << "\nWoof! I am a " << breed << " dog.\n";
+    }
+};
+
+
+class Cat : public Animal {
+private:
+    string color;
+
+public:
+    Cat(const string& name, int age, const string& color)
+        : Animal(name, age), color(color) {}
+
+    void meow() {
+        cout <<"\nMeow! I am a " << color << " cat.\n";
+    }
+};
+
+
+class Cow : public Animal {
+private:
+    string sound;
+
+public:
+    Cow(const string& name, int age, const string& sound)
+        : Animal(name, age), sound(sound) {}
+
+    void moo() {
+        cout << "\nMoo! I make the sound '" << sound << "'.";
+    }
+};
+
+int main() {
+   
+
+    Dog dog("Scooby", 3, "Golden Retriever");
+    dog.print();  
+    dog.bark();       
+
+    Cat cat("Oggy", 5, "Funny");
+    cat.print();  
+    cat.meow();      
+
+    Cow cow("Annabelle", 4, "Moo");
+    cow.print();  
+    cow.moo();     
+
+    return 0;
+}

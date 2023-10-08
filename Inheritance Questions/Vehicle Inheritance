@@ -1,0 +1,85 @@
+/*Vehicle Inheritance: Implement a base class Vehicle with attributes like make,
+model, and year. Create subclasses (e.g., Car, Bicycle, Motorcycle) that inherit
+from Vehicle and add properties or methods specific to each type of vehicle.*/
+
+#include <iostream>
+using namespace std;
+
+// Base class Vehicle
+class Vehicle {
+protected:
+    string make;
+    string model;
+    int year;
+
+public:
+    Vehicle(string make, string model, int year)
+        : make(make), model(model), year(year) {}
+
+    void displayInfo() {
+        cout << "Make: " << make << endl;
+        cout << "Model: " << model << endl;
+        cout << "Year: " << year << endl;
+    }
+};
+
+class Car : public Vehicle {
+private:
+    int numDoors;
+
+public:
+    Car(string make, string model, int year, int numDoors)
+        : Vehicle(make, model, year), numDoors(numDoors) {}
+
+    void displayInfo() {
+        Vehicle::displayInfo();
+        cout << "Number of doors: " << numDoors << endl;
+    }
+};
+
+
+class Bicycle : public Vehicle {
+private:
+    string type;
+
+public:
+    Bicycle(string make, string model, int year, string type)
+        : Vehicle(make, model, year), type(type) {}
+
+    void displayInfo() {
+        Vehicle::displayInfo();
+        cout << "Type: " << type << endl;
+    }
+};
+
+
+class Motorcycle : public Vehicle {
+private:
+    string engineType;
+
+public:
+    Motorcycle(string make, string model, int year, string engineType)
+        : Vehicle(make, model, year), engineType(engineType) {}
+
+    void displayInfo() {
+        Vehicle::displayInfo();
+        cout << "Engine Type: " << engineType << endl;
+    }
+};
+
+int main() {
+    Car car("TATA", "NEXON", 2023, 4);
+    Bicycle bicycle("ALTIS", "TOYOTA COROLLA", 2021, "Mountain");
+    Motorcycle motorcycle("Honda", "CBR600RR", 2020, "Inline-four");
+
+    cout << "Car Information:" << endl;
+    car.displayInfo();
+
+    cout << "\nBicycle Information:" << endl;
+    bicycle.displayInfo();
+
+    cout << "\nMotorcycle Information:" << endl;
+    motorcycle.displayInfo();
+
+    return 0;
+}
