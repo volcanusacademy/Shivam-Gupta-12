@@ -1,0 +1,103 @@
+/*Shape Inheritance: Create a base class Shape with properties like color and
+methods like getArea(). Create subclasses (e.g., Circle, Rectangle, Triangle) 
+that inherit from Shape and implement the getArea() method differently for each
+shape. Demonstrate how to calculate the area of various shapes using inheritance.*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Base class Shape
+class Shape {
+protected:
+    string color;
+
+public:
+    Shape(string color) : color(color) {}
+
+    
+    virtual double getArea() = 0;
+
+    string getColor() {
+        return color;
+    }
+};
+
+
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    Circle(string color, double radius) : Shape(color), radius(radius) {}
+
+    double getArea() {
+        return M_PI * radius * radius;
+    }
+};
+
+
+class Rectangle : public Shape {
+private:
+    double length;
+    double width;
+
+public:
+    Rectangle(string color, double length, double width)
+        : Shape(color), length(length), width(width) {}
+
+    double getArea() {
+        return length * width;
+    }
+};
+
+
+class Triangle : public Shape {
+private:
+    double base;
+    double height;
+
+public:
+    Triangle(string color, double base, double height)
+        : Shape(color), base(base), height(height) {}
+
+    double getArea() {
+        return 0.5 * base * height;
+    }
+};
+
+int main() {
+    string color;
+    double radius, length, width, base, height;
+
+    cout << "Enter the color of the circle: ";
+    cin >> color;
+    cout << "Enter the radius of the circle: ";
+    cin >> radius;
+
+    Circle circle(color, radius);
+    
+    cout << "\nEnter the color of the rectangle: ";
+    cin >> color;
+    cout << "Enter the length of the rectangle: ";
+    cin >> length;
+    cout << "Enter the width of the rectangle: ";
+    cin >> width;
+
+    Rectangle rectangle(color, length, width);
+
+    cout << "\nEnter the color of the triangle: ";
+    cin >> color;
+    cout << "Enter the base length of the triangle: ";
+    cin >> base;
+    cout << "Enter the height of the triangle: ";
+    cin >> height;
+
+    Triangle triangle(color, base, height);
+
+    cout << "\nCircle Area: " << circle.getArea() << endl;
+    cout << "\nRectangle Area: " << rectangle.getArea() << endl;
+    cout << "\nTriangle Area: " << triangle.getArea() << endl;
+
+    return 0;
+}

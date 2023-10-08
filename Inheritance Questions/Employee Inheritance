@@ -1,0 +1,90 @@
+/*Employee Inheritance: Define a base class Employee with attributes like name, 
+employeeID, and salary. Create subclasses (e.g., Manager, Developer, Salesperson)
+that inherit from Employee and add attributes and methods specific to each job role.*/
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Employee {
+protected:
+    string name;
+    int employeeID;
+    double salary;
+
+public:
+    Employee(const string& name, int employeeID, double salary)
+        : name(name), employeeID(employeeID), salary(salary) {}
+
+    virtual void displayDetails() {
+        cout << "\nName: " << name;
+        cout << "\nEmployee ID: " << employeeID;
+        cout << "\nSalary: " << salary;
+    }
+};
+class Manager : public Employee {
+private:
+    string department;
+
+public:
+    Manager(const string& name, int employeeID, double salary, const string& department)
+        : Employee(name, employeeID, salary), department(department) {}
+
+    void displayDetails() override {
+        cout << "\n=== Manager Details ===";
+        Employee::displayDetails();
+        cout << "\nDepartment: " << department;
+    }
+};
+
+class Developer : public Employee {
+private:
+    string programmingLanguage;
+
+public:
+    Developer(const string& name, int employeeID, double salary, const string& programmingLanguage)
+        : Employee(name, employeeID, salary), programmingLanguage(programmingLanguage) {}
+
+    void displayDetails() override {
+        cout << "\n=== Developer Details ===";
+        Employee::displayDetails();
+        cout << "\nProgramming Language: " << programmingLanguage;
+    }
+};
+
+class Salesperson : public Employee {
+private:
+    double commissionRate;
+
+public:
+    Salesperson(const string& name, int employeeID, double salary, double commissionRate)
+        : Employee(name, employeeID, salary), commissionRate(commissionRate) {}
+
+    void displayDetails() override {
+        cout << "\n=== Salesperson Details ===";
+        Employee::displayDetails();
+        cout << "\nCommission Rate: " << commissionRate << "%";
+    }
+};
+int main() {
+    Employee employee("Shivam gupta", 12345, 5000.0);
+    Manager manager("Anurag", 67890, 8000.0, "Human Resources");
+    Developer developer("Sahil", 24680, 6000.0, "C++");
+    Salesperson salesperson("Prakash", 13579, 4000.0, 2.5);
+
+    employee.displayDetails();
+    cout << endl;
+
+    manager.displayDetails();
+    cout << endl;
+
+    developer.displayDetails();
+    cout << endl;
+
+    salesperson.displayDetails();
+    cout << endl;
+
+    return 0;
+}
