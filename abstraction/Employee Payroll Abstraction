@@ -1,0 +1,46 @@
+/* Employee Payroll Abstraction:
+Create a C++ program that models an employee payroll system. 
+Define an Employee class with attributes like name, ID, and salary.
+Abstract the calculation of bonuses and display employee details.
+
+Private name. ID, salary*/
+
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    int ID;
+    double salary;
+
+public:
+    Employee(string empName, int empID, double empSalary) {
+        name = empName;
+        ID = empID;
+        salary = empSalary;
+    }
+
+    void calculateBonus(double bonusPercentage) {
+        double bonusAmount = salary * (bonusPercentage / 100);
+        salary += bonusAmount;
+    }
+
+    void displayDetails() {
+        cout << "\nEmployee Details";
+        cout << "\nName: " << name;
+        cout << "\nID: " << ID;
+        cout << "\nSalary:" << salary;
+    }
+};
+
+int main() {
+    Employee emp("SHIVAM GUPTA",80431 ,20000.0);
+
+    emp.displayDetails(); 
+    
+    emp.calculateBonus(10.0);
+    emp.displayDetails(); 
+    return 0;
+}
