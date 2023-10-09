@@ -1,0 +1,43 @@
+/*Write a C++ class Employee with private attributes name and salary.
+Provide a method to set the name and a method to get the salary.*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+private:
+    string name;
+    float salary;
+
+public:
+    
+    void setName(const string& newName) {
+        name = newName;
+    }
+
+
+    void setSalary(float newSalary) {
+        salary = newSalary;
+    }
+    
+    float getSalary() const {
+        return salary;
+    }
+
+    
+    string getName() const {
+        return name;
+    }
+};
+
+int main() {
+    Employee em;
+    em.setName("Shivam gupta");
+    em.setSalary(20000.0);
+
+    cout << "Employee Name: " << em.getName();
+    cout << "\nEmployee Salary: " << em.getSalary();
+
+    return 0;
+}

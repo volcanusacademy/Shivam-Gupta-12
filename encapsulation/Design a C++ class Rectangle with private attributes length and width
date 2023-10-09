@@ -1,0 +1,48 @@
+/*Design a C++ class Rectangle with private attributes length and width.
+Provide public methods to set and get these attributes, and calculate
+the area of the rectangle.*/
+
+
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    float length;
+    float width;
+
+public:
+    
+    void setLength(float newLength) {
+        length = newLength;
+    }
+    
+    double getLength() const {
+        return length;
+    }
+    
+    void setWidth(float newWidth) {
+        width = newWidth;
+    }
+
+    float getWidth() const {
+        return width;
+    }
+
+    float calculateArea() const {
+        return length * width;
+    }
+};
+
+int main() {
+    Rectangle re;
+    re.setLength(5.5);
+    re.setWidth(3.7);
+
+    cout << "Rectangle";
+    cout << "\nLength: " << re.getLength();
+    cout << "\nWidth: " << re.getWidth();
+    cout << "\nArea: " << re.calculateArea();
+
+    return 0;
+}
