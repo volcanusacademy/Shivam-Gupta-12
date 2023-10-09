@@ -1,0 +1,59 @@
+/*Create a C++ class BankAccount with a private field balance. 
+Implement public methods for depositing and withdrawing funds while
+encapsulating the balance field.*/
+
+
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;
+
+public:
+    BankAccount() {
+        balance = 0.0;
+    }
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            cout << "\nDeposit successful!";
+        } else {
+            cout << "\nInvalid amount for deposit.";
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0) {
+            if (amount <= balance) {
+                balance -= amount;
+                cout << "\nWithdrawal successful!";
+            } else {
+                cout << "\nInsufficient balance.";
+            }
+        } else {
+            cout << "\nInvalid amount for withdrawal.";
+        }
+    }
+
+    double getBalance() const {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount acc;
+    cout << "\nInitial balance: " << acc.getBalance();
+
+    acc.deposit(1000.0);
+    cout << "\nCurrent balance after deposit:"<< acc.getBalance();
+
+    acc.withdraw(500.0);
+    cout << "\nCurrent balance after withdrawal:" << acc.getBalance();
+
+    acc.withdraw(2000.0);
+    cout << "\nCurrent balance after attempted withdrawal:" << acc.getBalance();
+
+    return 0;
+}

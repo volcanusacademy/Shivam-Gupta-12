@@ -1,0 +1,41 @@
+/*Create a C++ class Person with private attributes for name and age.
+Provide public methods to set and get these attributes*/
+
+
+#include <iostream>
+using namespace std;
+
+class Person {
+private:
+    string name;
+    int age;
+
+public:
+    void setName(const string& newName) {
+        name = newName;
+    }
+
+
+    string getName() const {
+        return name;
+    }
+
+    void setAge(int newAge) {
+        age = newAge;
+    }
+    
+    int getAge() const {
+        return age;
+    }
+};
+
+int main() {
+    Person person;
+    person.setName("Shivam");
+    person.setAge(24);
+
+    cout << "Name: " << person.getName();
+    cout << "\nAge: " << person.getAge();
+
+    return 0;
+}

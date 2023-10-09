@@ -1,0 +1,52 @@
+/*Design a C++ class Car with private attributes for make, model, and year.
+Create public methods to set and get these attributes.
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+private:
+    string make;
+    string model;
+    int year;
+
+public:
+    void setMake(const string& newMake) {
+        make = newMake;
+    }
+
+    void setModel(const string& newModel) {
+        model = newModel;
+    }
+
+    void setYear(int newYear) {
+        year = newYear;
+    }
+
+    string getMake() const {
+        return make;
+    }
+
+    string getModel() const {
+        return model;
+    }
+
+    int getYear() const {
+        return year;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.setMake("TATA");
+    myCar.setModel("NEXON");
+    myCar.setYear(2023);
+    
+    cout << "Car Make: " << myCar.getMake();
+    cout << "\nCar Model: " << myCar.getModel();
+    cout << "\nCar Year: " << myCar.getYear();
+
+    return 0;
+}
