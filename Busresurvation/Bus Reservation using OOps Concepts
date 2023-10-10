@@ -1,0 +1,127 @@
+/*Create a bus reservation System, use proper varibale naming and comments, create a flow as given. 
+
+ class BUS_Reservation{
+     
+     double Final_Fare, Fare;
+     int i, age, no_of_ticket;
+     string Passenger_Name, source, destination;
+     
+     BUS_Reservation(){
+         //welcome msg
+     }
+       void Passenger_details(){
+         
+     }
+     void Booking(){
+         // source destination proceed to book no of ticket
+     }
+   
+     void farecal(){
+         //
+     }
+     void print+ticket(){
+         // ticekt display and create a file
+     }
+     
+ }; */
+ 
+ 
+ 
+ #include <iostream>
+#include <fstream>
+using namespace std;
+
+class Busresurvation{
+      public:
+      string source, destination,date,passname, avi;
+      int age,seat,fare;
+      
+     
+      
+     Busresurvation(){
+
+    cout<<":Welcome to Our Bus Resurvation System:\n\n";
+    
+     } 
+   
+    void passdetail()
+    {
+        cout<<"Enter Journey Date:";
+        cin>>date;
+    
+        cout<<"Enter Passname :";
+        cin>>passname;
+        
+        cout<<"Enter The Age :";
+        cin>>age;
+        
+        cout <<"Totle Seats :";
+        cin>>seat;
+        
+        
+        farecal(seat);
+        PrintTicket();
+
+    }
+    
+    void avialability()
+    {
+        
+     ifstream filestream("testout.txt"); 
+  if (filestream.is_open())  
+  {  
+    while ( getline (filestream,avi) )  
+    {  
+      cout << avi <<endl;  
+    }  
+    filestream.close();  
+  }  
+  else {  
+      cout << "\n Seat Are Avilable."<<endl;
+      cout<<"\nThank you using our Bus service";
+    }  
+  
+    }
+    
+    void farecal(int seat)
+    {
+    
+        
+        fare=seat*500;
+        cout<<"Totle Fare"<<fare;
+    
+    }
+      void PrintTicket(){
+        cout<<"\n***********************Ticket**********************************";
+        cout<<"\n\n Bus Number Is: MP091234";
+        cout<<"\n Date(dd/mm/yyyy):"<<date;
+        cout<<"\n Source:-> "<<source<<"\t "<<"Destination:-> "<<destination;
+        cout<<"\n Passenger Name-->"<<passname<<"\t"<<"Passenger Age-->"<<age;
+        cout<<"\n Total  Seats:-->"<<seat<<"\t"<<"Total Fare-->"<<fare;
+        cout<<"\n\n***************************************************************";  
+        
+        
+    }
+    
+      void resurve()
+      {
+         
+         cout<< "Enter Pickup :";
+         cin>>source;
+         cout<<"Enter Destination :";
+         cin>>destination;
+         
+         passdetail();
+         avialability();
+     }
+    
+
+};
+
+int main()
+{  
+    Busresurvation Br;
+    Br.resurve();
+
+    return 0;
+}
