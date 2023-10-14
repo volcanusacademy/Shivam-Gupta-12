@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Ordering Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+
+body {
+    background-image: url(https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg);
+   
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    
+    background-color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    color:black;
+
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+   background-color: bisque;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color:brown;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="radio"], input[type="number"], textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: red;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+
+
+</head>
+
+
+<body>
+    
+    <h1><u><marquee>Food Ordering Assessment</marquee></u></h1>
+    
+
+    <form id="food-order-assessment">
+        <div class="question">
+            <label>What type of cuisine are you in the mood for?</label><br>
+            <input type="radio" name="cuisine" value="Italian"> Italian
+            <input type="radio" name="cuisine" value="Mexican"> Mexican
+            <input type="radio" name="cuisine" value="Chinese"> Chinese
+        </div>
+        <div class="question">
+            <label>How spicy do you like your food?</label><br>
+            <input type="radio" name="spice-level" value="Mild"> Mild
+            <input type="radio" name="spice-level" value="Medium"> Medium
+            <input type="radio" name="spice-level" value="Spicy"> Spicy
+        </div>
+        <div class="question">
+            <label>Choose a food item you'd like to order.</label><br>
+            <input type="radio" name="food-item" value="Burger"> Burger
+            <input type="radio" name="food-item" value="Pizza"> Pizza
+            <input type="radio" name="food-item" value="Pasta"> Pasta
+            <input type="radio" name="food-item" value="Sushi"> Sushi
+        </div>
+        <div class="question">
+            <label>How many servings do you want to order?</label><br>
+            <input type="number" name="servings" min="1">
+        </div>
+        <div class="question">
+            <label>Any specific dietary preferences or allergies?</label><br>
+            <textarea name="dietary-preferences"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
