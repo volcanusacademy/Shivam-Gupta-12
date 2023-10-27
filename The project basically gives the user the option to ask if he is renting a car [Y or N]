@@ -1,0 +1,70 @@
+/* The project basically gives the user the option to ask if he is renting a car [Y or N]:
+
+if Y is inputed, then it ask about "C” for Compact or “F” for Full-size,
+
+if the user selects compact the project displays that the user has selected compact and
+
+if the code displays fullsize the project displays that the user has selected fullsize.
+
+Then it asks the user if they have a coupon or not by “Y” or “N” if the users answer Y for the coupon the price is 7% off on 456.56 for compact car.
+
+If the user answers N the price is a normal 456.56. The fullsize normal price is 460.50 and the price with a coupon is 7% off on 460.50.*/
+
+#include <stdio.h>
+
+int main() {
+    char renting, carType, hasCoupon;
+    double compactPrice = 456.56;
+    double fullSizePrice = 460.50;
+    double discount = 0.07;
+
+    printf("Are you renting a car? (Y/N): ");
+    scanf(" %c", &renting);
+
+    if (renting == 'Y' || renting == 'y') {
+        printf("Enter 'C' for Compact or 'F' for Full-size: ");
+        scanf(" %c", &carType);
+
+        if (carType == 'C' || carType == 'c') {
+            printf("You have selected Compact.\n");
+            printf("Do you have a coupon? (Y/N): ");
+            scanf(" %c", &hasCoupon);
+            
+            if (hasCoupon == 'Y' || hasCoupon == 'y') {
+                compactPrice -= compactPrice * discount;
+                printf("Price after 7%% discount: %f\n", compactPrice);
+            } 
+            
+            else {
+                printf("Price: %f\n", compactPrice);
+            }
+        } else if (carType == 'F' || carType == 'f') {
+            printf("You have selected Full-size.\n");
+            printf("Do you have a coupon? (Y/N): ");
+            scanf(" %c", &hasCoupon);
+            
+            if (hasCoupon == 'Y' || hasCoupon == 'y') {
+                fullSizePrice -= fullSizePrice * discount;
+                printf("Price after 7%% discount: %f\n", fullSizePrice);
+            }
+            
+            else {
+                printf("Price: %f\n", fullSizePrice);
+            }
+        }
+        
+        else {
+            printf("Invalid car type.\n");
+        }
+    } 
+    
+    else if (renting == 'N' || renting == 'n') {
+        printf("Thank you for using our service.\n");
+    } 
+    
+    else {
+        printf("Invalid input.\n");
+    }
+
+    return 0;
+}

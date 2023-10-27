@@ -1,0 +1,29 @@
+//WAP to accept 4 digit number and find out the greatest and smallest digit from i
+
+#include <stdio.h>
+
+int main() {
+    int number;
+    printf("Enter a 4-digit number: ");
+    scanf("%d", &number);
+
+    int digit;
+    int greatest = 0;
+    int smallest = 9;
+
+    for (int i = 0; i < 4; i++) {
+        digit = number % 10;
+        if (digit > greatest) {
+            greatest = digit;
+        }
+        if (digit < smallest) {
+            smallest = digit;
+        }
+        number /= 10;
+    }
+
+    printf("Greatest digit: %d\n", greatest);
+    printf("Smallest digit: %d\n", smallest);
+
+    return 0;
+}

@@ -1,0 +1,54 @@
+/*Animal Polymorphism:
+
+Create a simple hierarchy of animals (e.g., Dog, Cat, Bird) with a common 
+method makeSound(). Implement polymorphism by overriding this method in each 
+animal class and demonstrate how you can make different animals produce their
+respective sounds using polymorphism.*/
+
+#include <iostream>
+using namespace std;
+
+
+class Animal {
+public:
+    virtual void Sound() const = 0; 
+};
+
+class Dog : public Animal {
+public:
+    void Sound() const override {
+        cout << " Dog sound:Woof";
+    }
+};
+
+class Cat : public Animal {
+public:
+    void Sound() const override {
+        cout << "\n Cat sound:Meow";
+    }
+};
+
+class Bird : public Animal {
+public:
+    void Sound() const override {
+        cout << "\n Birds sound:Chewink";
+    }
+};
+
+int main() {
+    Dog dog;
+    Cat cat;
+    Bird bird;
+
+    
+    Animal* animal1 = &dog;
+    Animal* animal2 = &cat;
+    Animal* animal3 = &bird;
+
+    animal1->Sound(); 
+    animal2->Sound(); 
+    animal3->Sound(); 
+   
+
+    return 0;
+}

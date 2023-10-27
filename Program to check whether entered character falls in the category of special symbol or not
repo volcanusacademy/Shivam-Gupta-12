@@ -1,0 +1,20 @@
+//Program to check whether entered character falls in the category of special symbol or not
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    
+    if ((ch >= '!' && ch <= '/') || (ch >= ':' && ch <= '@') || 
+        (ch >= '[' && ch <= '`') || (ch >= '{' && ch <= '~')) {
+        printf("%c is a special symbol.\n", ch);
+    } else {
+        printf("%c is not a special symbol.\n", ch);
+    }
+
+    return 0;
+}

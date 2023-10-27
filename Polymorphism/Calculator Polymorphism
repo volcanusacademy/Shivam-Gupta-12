@@ -1,0 +1,112 @@
+/*Calculator Polymorphism:
+
+Implement a simple calculator with operations like addition, subtraction, 
+multiplication, and division. Use polymorphism to handle these operations 
+in a way that allows you to perform calculations on different numeric types
+(e.g., integers, floats) using the same calculator class.*/
+
+
+/*Calculator Polymorphism:
+
+Implement a simple calculator with operations like addition, subtraction, 
+multiplication, and division. Use polymorphism to handle these operations 
+in a way that allows you to perform calculations on different numeric types
+(e.g., integers, floats) using the same calculator class.*/
+
+
+#include <iostream>
+using namespace std;
+
+
+class Operation {
+public:
+    virtual float calculate(float a, float b) const = 0;
+    virtual ~Operation() {}
+};
+
+
+class Addition : public Operation {
+public:
+    float calculate(float a, float b) const override {
+        return a + b;
+    }
+};
+
+class Subtraction : public Operation {
+public:
+    float calculate(float a, float b) const override {
+        return a - b;
+    }
+};
+
+
+class Multiplication : public Operation {
+public:
+    float calculate(float a, float b) const override {
+        return a * b;
+    }
+};
+
+
+class Division : public Operation {
+public:
+    float calculate(float a, float b) const override {
+        if (b != 0) {
+            return a / b;
+        } else {
+            cout << "Error: Division by zero is not allowed.";
+            return 0;
+        }
+    }
+};
+
+
+class Calculator {
+public:
+    float calculate(float a, float b, const Operation& op) const {
+        return op.calculate(a, b);
+    }
+};
+
+int main() {
+    float num1, num2;
+    char op;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "\nEnter operation (+, -, *, /): ";
+    cin >> op;
+    cout << "\nEnter second number: ";
+    cin >> num2;
+
+    Calculator calculator;
+
+    
+    Operation* operation = nullptr;
+    switch (op) {
+        case '+':
+            operation = new Addition();
+            break;
+        case '-':
+            operation = new Subtraction();
+            break;
+        case '*':
+            operation = new Multiplication();
+            break;
+        case '/':
+            operation = new Division();
+            break;
+        default:
+            cout << "\nError: Invalid operation.";
+            return 1;
+    }
+
+
+    if (operation != nullptr) {
+        float result = calculator.calculate(num1, num2, *operation);
+        cout << "Result: " << result;
+        delete operation;
+    }
+
+    return 0;
+}

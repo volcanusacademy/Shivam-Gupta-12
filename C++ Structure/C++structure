@@ -1,0 +1,77 @@
+//Create a program in C++ to print area of square, triangle and rectangle by creating a class and object.
+
+#include <iostream>
+
+using namespace std;
+
+class Shape {
+public:
+    virtual float Area() = 0;
+};
+
+class Square : public Shape {
+private:
+    float side;
+
+public:
+    Square(float s) {
+        side = s;
+    }
+
+    float Area() {
+        return side * side;
+    }
+};
+
+class Triangle : public Shape {
+private:
+    float base;
+    float height;
+
+public:
+    Triangle(float b, float h) {
+        base = b;
+        height = h;
+    }
+
+    float Area() {
+        return (base * height) / 2;
+    }
+};
+
+class Rectangle : public Shape {
+private:
+    float length;
+    float width;
+
+public:
+    Rectangle(float l, float w) {
+        length = l;
+        width = w;
+    }
+
+    float Area() {
+        return length * width;
+    }
+};
+
+int main() {
+    float side, base, height, length, width;
+
+    cout << "Enter the side of the square: ";
+    cin >> side;
+    Square square(side);
+    cout << "Area of Square: " << square.Area();
+
+    cout << "\nEnter the base and height of the triangle: ";
+    cin >> base >> height;
+    Triangle triangle(base, height);
+    cout << "Area of Triangle: " << triangle.Area();
+
+    cout << "\nEnter the length and width of the rectangle:";
+    cin >> length >> width;
+    Rectangle rectangle(length, width);
+    cout << "Area of Rectangle: " << rectangle.Area();
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+// Program to check whether first number is divisible by second or not
+
+#include<stdio.h>
+
+
+int main()
+{
+
+  int first, second;
+
+  printf("Enter first numbers:");
+  scanf("%d",&first);
+  
+   printf("Enter second numbers:");
+  scanf("%d",&second);
+
+  if(first%second==0)
+    printf("First is divisible by second number");
+  else
+    printf("Not divisible");
+    
+    return 0;
+}

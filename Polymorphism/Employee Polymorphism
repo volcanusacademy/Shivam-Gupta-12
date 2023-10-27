@@ -1,0 +1,58 @@
+/* Employee Polymorphism:
+
+Define an Employee class with a method calculateSalary().Create subclasses for 
+different types of employees (e.g., Full_Time_Employee, Part_Time_Employee, Intern)
+and demonstrate how polymorphism can be used to calculate salaries differently
+for each type of employee. */
+
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+public:
+    virtual double Salary() const = 0; 
+};
+
+class Full_Time_Employee : public Employee {
+public:
+    double Salary() const override {
+        return 20000.0; 
+    }
+};
+
+class Part_Time_Employee : public Employee {
+public:
+    double Salary() const override {
+        return 10000; 
+    }
+};
+
+class Intern : public Employee {
+public:
+    double Salary() const override {
+        return 2000.0; 
+    }
+};
+
+int main() {
+    
+    Full_Time_Employee fullTimeEmployee;
+    Part_Time_Employee partTimeEmployee;
+    Intern intern;
+
+
+    Employee* employee1 = &fullTimeEmployee;
+    Employee* employee2 = &partTimeEmployee;
+    Employee* employee3 = &intern;
+
+    double salary1 = employee1->Salary();
+    double salary2 = employee2->Salary();
+    double salary3 = employee3->Salary();
+
+    cout << "Salary of full-time employee: " << salary1;
+    cout << "\nSalary of part-time employee: " << salary2;
+    cout << "\nStipend of intern: " << salary3;
+
+    return 0;
+}

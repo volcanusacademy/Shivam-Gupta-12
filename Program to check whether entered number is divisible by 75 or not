@@ -1,0 +1,17 @@
+// Program to check whether entered number is divisible by 75 or not
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num % 3 == 0 && num % 25 == 0) {
+        printf("%d is divisible by 75.\n", num);
+    } else {
+        printf("%d is not divisible by 75.\n", num);
+    }
+
+    return 0;
+}

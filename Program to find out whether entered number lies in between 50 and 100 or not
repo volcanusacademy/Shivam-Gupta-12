@@ -1,0 +1,25 @@
+//Program to find out whether entered number lies in between 50 and 100 or not
+
+#include <stdio.h>
+
+int
+main ()
+{
+  int number;
+
+
+  printf ("Enter a number: ");
+  scanf ("%d", &number);
+
+
+  if (number >= 50 && number <= 100)
+    {
+      printf ("The number %d is between 50 and 100.\n", number);
+    }
+  else
+    {
+      printf ("The number %d is not between 50 and 100.\n", number);
+    }
+
+  return 0;
+}

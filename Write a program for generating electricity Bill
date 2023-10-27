@@ -1,0 +1,38 @@
+/*Write a program for generating electricity Bill. Accept last month unit 
+and currentmonthunit from user, then calculate and print bill amount
+according to following condition For units
+
+0-100 charges 2 rs/unit
+
+101-200 charges 3rs/unit
+
+201-300 4rs/unit
+
+>300 charges 5rs/unit*/
+
+#include <stdio.h>
+
+int main() {
+    int lastMonthUnit, currentMonthUnit;
+    printf("Enter the last month's unit: ");
+    scanf("%d", &lastMonthUnit);
+    printf("Enter the current month's unit: ");
+    scanf("%d", &currentMonthUnit);
+
+    int unitsUsed = currentMonthUnit - lastMonthUnit;
+    int billAmount = 0;
+
+    if (unitsUsed <= 100) {
+        billAmount = unitsUsed * 2;
+    } else if (unitsUsed <= 200) {
+        billAmount = 100 * 2 + (unitsUsed - 100) * 3;
+    } else if (unitsUsed <= 300) {
+        billAmount = 100 * 2 + 100 * 3 + (unitsUsed - 200) * 4;
+    } else {
+        billAmount = 100 * 2 + 100 * 3 + 100 * 4 + (unitsUsed - 300) * 5;
+    }
+
+    printf("Bill amount: %d\n", billAmount);
+
+    return 0;
+}

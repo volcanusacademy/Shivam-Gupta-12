@@ -1,0 +1,74 @@
+/*Bank Account Inheritance: Implement a base class BankAccount with properties
+like accountNumber, balance, and methods like deposit() and withdraw(). Create
+subclasses (e.g., SavingsAccount, CheckingAccount) that inherit from BankAccount
+and add methods or properties specific to each account type*/
+
+
+#include <iostream>
+
+using namespace std;
+
+class BankAccount {
+protected:
+    int accountNumber;
+    double balance;
+public:
+    BankAccount(int accNumber, double initialBalance) {
+        accountNumber = accNumber;
+        balance = initialBalance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        cout << "\nDeposit of " << amount << " successful. New balance: " << balance;
+    }
+
+    void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            cout << "\nWithdrawal of " << amount << " successful. New balance: " << balance;
+        } else {
+            cout << "\nInsufficient funds. Unable to withdraw " << amount;
+        }
+    }
+};
+
+class SavingsAccount : public BankAccount {
+private:
+    double interestRate;
+public:
+    SavingsAccount(int accNumber, double initialBalance, double rate)
+        : BankAccount(accNumber, initialBalance), interestRate(rate) {}
+
+    void applyInterest() {
+        double interest = balance * interestRate / 100;
+        balance += interest;
+        cout << "\nInterest applied. New balance: " << balance;
+    }
+};
+
+class CheckingAccount : public BankAccount {
+public:
+    CheckingAccount(int accNumber, double initialBalance)
+        : BankAccount(accNumber, initialBalance) {}
+
+    void deductFees() {
+        double fees = 5.0;
+        balance -= fees;
+        cout << "\nFees deducted. New balance: " << balance;
+    }
+};
+
+int main() {
+    SavingsAccount savingsAcc(1234,1000.0, 2.5);
+    savingsAcc.deposit(500.0);
+    savingsAcc.applyInterest();
+    savingsAcc.withdraw(200.0);
+
+    CheckingAccount checkingAcc(5678, 200.0);
+    checkingAcc.deposit(100.0);
+    checkingAcc.deductFees();
+    checkingAcc.withdraw(50.0);
+
+    return 0;
+}

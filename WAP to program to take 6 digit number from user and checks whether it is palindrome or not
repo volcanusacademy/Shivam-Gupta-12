@@ -1,0 +1,26 @@
+//WAP to program to take 6 digit number from user and checks whether it is palindrome or not
+
+#include <stdio.h>
+
+int main() {
+    int number, originalNumber, reverseNumber = 0;
+    printf("Enter a 6-digit number: ");
+    scanf("%d", &number);
+
+    originalNumber = number;
+
+    
+    while (number != 0) {
+        int remainder = number % 10;
+        reverseNumber = reverseNumber * 10 + remainder;
+        number /= 10;
+    }
+
+    if (originalNumber == reverseNumber) {
+        printf("The number is a palindrome.\n");
+    } else {
+        printf("The number is not a palindrome.\n");
+    }
+
+    return 0;
+}

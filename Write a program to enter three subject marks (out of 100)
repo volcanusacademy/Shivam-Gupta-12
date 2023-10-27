@@ -1,0 +1,26 @@
+/*Write a program to enter three subject marks (out of 100). Check if student is
+pass or Fail,only if he/she scores greater than 75 in each subject and the
+average of all three subject marks should also be greater than 80.*/
+
+#include <stdio.h>
+
+int main() {
+    int subject1, subject2, subject3;
+    printf("Enter marks for subject 1 (out of 100): ");
+    scanf("%d", &subject1);
+    printf("Enter marks for subject 2 (out of 100): ");
+    scanf("%d", &subject2);
+    printf("Enter marks for subject 3 (out of 100): ");
+    scanf("%d", &subject3);
+
+    int average = (subject1 + subject2 + subject3) / 3;
+       
+       
+    if (subject1 > 75 && subject2 > 75 && subject3 > 75 && average > 80) {
+        printf("Pass\n");
+    } else {
+        printf("Fail\n");
+    }
+
+    return 0;
+}

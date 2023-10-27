@@ -1,0 +1,23 @@
+/*check if both numbers are equals or not,
+if not then find out the greatest number*/
+
+#include<stdio.h>
+
+int main ()
+{
+  int num1, num2;
+  
+  printf("Enter Number 1:");
+  scanf("%d",&num1);
+  printf("Enter Number 2:");
+  scanf("%d",&num2);
+
+  if (num1 == num2)
+    printf("Both are equal");
+  else if (num1 > num2) 
+    printf("%d Number 1 is greater", num1);
+  else
+    printf("%d Number 2 is greater", num2);
+
+  return 0;
+}

@@ -1,0 +1,56 @@
+/*Bank Account Abstraction: 
+Create a C++ program that models a bank account using OOP principles. 
+Create a BankAccount class with methods to deposit, withdraw,
+and check the balance while abstracting the internal details.
+
+Private the bank balance.*/
+
+
+#include <iostream>
+using namespace std;
+
+
+class BankAccount {
+private:
+    double balance;
+
+public:
+    BankAccount() {
+        balance = 0.0;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        cout << "\nDeposited " << amount << " \ninto the account.";
+    }
+
+    void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        cout << "\nWithdrew " << amount << "\nfrom the account.";
+        } else {
+            cout << "\nInsufficient balance.";
+        }
+    }
+
+    void checkBalance() {
+        cout << "\nCurrent balance: " << balance;
+    }
+};
+
+int main() {
+    BankAccount acc;
+
+    acc.checkBalance();
+
+    acc.deposit(1000.0);
+    acc.checkBalance();
+
+    acc.withdraw(500.0); 
+    acc.checkBalance();
+
+    acc.withdraw(1000.0);
+    acc.checkBalance(); 
+
+    return 0;
+}
