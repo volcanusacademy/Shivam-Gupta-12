@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Player</title>
+    <style>
+        #photo {
+            max-width: 100%;
+            max-height: 80vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="prevBtn">Previous</button>
+
+        <img id="photo" src="" alt="Photo">
+        <br>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const photos = [
+        " https://wallpaperaccess.com/full/2434761.jpg"
+           " https://wallpaperaccess.com/full/2434762.jpg",
+            "https://wallpaperaccess.com/full/2434763.jpg",
+            "https://wallpaperaccess.com/full/2434758.jpg",
+            "https://wallpaperaccess.com/full/2434759.jpg",
+        
+        ];
+
+        let currentIndex = 0;
+        const photoElement = document.getElementById("photo");
+        const prevButton = document.getElementById("prevBtn");
+        const nextButton = document.getElementById("nextBtn");
+
+        function showPhoto(index) {
+            photoElement.src = photos[index];
+        }
+
+        function showNextPhoto() {
+            currentIndex = (currentIndex + 1) % photos.length;
+            showPhoto(currentIndex);
+        }
+
+        function showPreviousPhoto() {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            showPhoto(currentIndex);
+        }
+
+        prevButton.addEventListener("click", showPreviousPhoto);
+        nextButton.addEventListener("click", showNextPhoto);
+
+    
+        showPhoto(currentIndex);
+    </script>
+</body>
+
+</html>

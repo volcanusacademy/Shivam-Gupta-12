@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+#question-container {
+  margin: 20px 0;
+}
+
+#answer-buttons button {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#result {
+  display: none;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Quiz Application</h1>
+  <div id="question-container"></div>
+  <div id="answer-buttons"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+  {
+    question: "What is the capital of France?",
+    answers: [
+      { text: "London", correct: false },
+      { text: "Paris", correct: true },
+      { text: "Berlin", correct: false },
+      { text: "Rome", correct: false }
+    ]
+  },
+  {
+    question: "Who painted the Mona Lisa?",
+    answers: [
+      { text: "Leonardo da Vinci", correct: true },
+      { text: "Pablo Picasso", correct: false },
+      { text: "Vincent van Gogh", correct: false },
+      { text: "Michelangelo", correct: false }
+    ]
+  },
+  {
+    question: "What is the largest planet in our solar system?",
+    answers: [
+      { text: "Mars", correct: false },
+      { text: "Jupiter", correct: true },
+      { text: "Saturn", correct: false },
+      { text: "Earth", correct: false }
+    ]
+  }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const questionContainer = document.getElementById("question-container");
+const answerButtons = document.getElementById("answer-buttons");
+const result = document.getElementById("result");
+
+function displayQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
+  questionContainer.innerText = currentQuestion.question;
+
+  answerButtons.innerHTML = "";
+  currentQuestion.answers.forEach(answer => {
+    const button = document.createElement("button");
+    button.innerText = answer.text;
+    button.addEventListener("click", () => checkAnswer(answer.correct));
+    answerButtons.appendChild(button);
+  });
+}
+
+function checkAnswer(correct) {
+  if (correct) {
+    score++;
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    displayQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  questionContainer.style.display = "none";
+  answerButtons.style.display = "none";
+  result.style.display = "block";
+  result.innerText = `Your score: ${score}/${questions.length}`;
+}
+
+displayQuestion();
+
+  </script>
+</body>
+</html>
