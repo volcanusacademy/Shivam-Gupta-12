@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.left_sidebar{
+    /* background-color: blueviolet; */
+    height: 100vh;
+    width: 15%;
+    padding: 1rem;
+    border-right: 1px solid wheat;
+}
+.content{
+    width:60%;
+    margin: 1rem;
+    /* background-color: aqua; */
+}
+.items{
+    padding: 1.1rem;
+    /* font-size: 2.5rem; */
+    font-size: 1.5vw;
+}
+.fa-solid {
+    margin: 10px;
+}
+
+.insta_story{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.insta_story::-webkit-scrollbar{
+    display: none;
+
+}
+.story_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.story_items img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 3px solid yellow;
+}
+.header{
+    margin: 2rem;
+
+}
+.insta_clone{
+    display: flex;
+}
+._img{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+._img img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 2px solid red;
+
+}
+.person_image{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.suggestions{
+    width: 25%;
+    margin-top: 40px;
+
+}
+.container{
+     margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 1rem;
+    /* background-color: brown; */
+}
+#text{
+    justify-content: space-evenly;
+    width: 88%;
+}
+._post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+._post img{
+    width: 100%;
+    object-fit: contain;
+    
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .items{
+        font-size:2.5vw ;
+    }
+    
+}
