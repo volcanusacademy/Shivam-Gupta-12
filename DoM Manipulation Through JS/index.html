@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Manipulation Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    #heading {
+        font-size: 36px;
+        margin-top: 100px;
+        transition: color 0.5s ease;
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    .button:hover {
+        background-color: #45a049; /* Darker Green */
+    }
+</style>
+</head>
+<body>
+
+<h1 id="heading">Original Heading</h1>
+
+<button id="changeContentBtn" class="button">Change Content</button>
+<button id="changeColorBtn" class="button">Change Color</button>
+
+<script>
+    // Selecting HTML Elements
+    var headingElement = document.getElementById('heading');
+    var changeContentBtn = document.getElementById('changeContentBtn');
+    var changeColorBtn = document.getElementById('changeColorBtn');
+
+    // Modifying Element Content, Attributes, and Styles
+    changeContentBtn.addEventListener('click', function() {
+        var contentOptions = ["Welcome!", "Hello World!", "DOM Manipulation", "JavaScript Rocks!", "Have a Great Day!"];
+        var randomIndex = Math.floor(Math.random() * contentOptions.length);
+        var randomContent = contentOptions[randomIndex];
+        headingElement.style.opacity = 0;
+        setTimeout(function() {
+            headingElement.innerHTML = randomContent;
+            headingElement.style.opacity = 1;
+        }, 500); // 500ms delay for fade-in effect
+    });
+
+    changeColorBtn.addEventListener('click', function() {
+        var colorOptions = ["blue", "green", "purple", "orange", "teal"];
+        var randomIndex = Math.floor(Math.random() * colorOptions.length);
+        var randomColor = colorOptions[randomIndex];
+        headingElement.style.color = randomColor;
+    });
+
+    // Handling Events
+    headingElement.addEventListener('click', function() {
+        alert('Heading Clicked!');
+    });
+</script>
+
+</body>
+</html>
