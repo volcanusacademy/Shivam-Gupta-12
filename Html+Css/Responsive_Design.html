@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Responsive Webpage</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color:black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color:wheat;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            
+            padding: 20px;
+        }
+
+        article {
+            border: 1px solid black;
+            margin: 10px 0;
+            padding: 15px;
+        }
+
+        footer {
+            background-color:black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+       
+        @media only screen and (max-width: 600px) {
+           
+            header, nav, section, article, footer {
+                padding: 10px;
+            }
+        }
+
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+           
+            header, nav, section, article, footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WELCOME TO MY PAGE</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a> 
+        <a href="#">About</a> 
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Main Content</h2>
+
+        <article>
+            <h3>Article 1</h3>
+            <p>In grammar, an article is any member of a class of dedicated words that are used with noun phrases to mark the identifiability of the referents of the noun phrases. The category of articles constitutes a part of speech. In English, both "the" and "a(n)" are articles, which combine with nouns to form noun phrases.</p>
+        </article>
+
+        <article>
+            <h3>Article 2</h3>
+            <p>Articles are words that identify a noun as being specific or unspecific. Consider the following examples: After the long day, the cup of tea tasted particularly good. By using the article the, we've shown that it was one specific day that was long and one specific cup of tea that tasted good</p>
+        </article>
+
+        <article>
+            <h3>Article 3</h3>
+            <p> Article 20 of the Constitution provides for the protection in respect of conviction for offences. No one can be convicted for an act that was not an offence at the time of its commission, and no one can be given punishment greater than what was provided in the law prevalent at the time of its commission.</p>
+        </article>
+    </section>
+
+    <footer>
+        &copy; 2024 Your Website Name
+    </footer>
+
+</body>
+</html>
